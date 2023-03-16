@@ -114,6 +114,7 @@ const AuthForm =({mode}) => {
                 <div>
                   <span>
                     <Link
+                      prefetch
                       href={content.linkUrl}
                       className="text-blue-600 font-bold"
                     >
