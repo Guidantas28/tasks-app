@@ -4,9 +4,9 @@ import { db } from './db';
 
 export const hashPassword = (password) => bcrypt.hash(password, 10)
 
-const comparePasswords = (plainTextPassword, hashedPassword) => bcrypt.compare(plainTextPassword, hashedPassword)
+export const comparePasswords = (plainTextPassword, hashedPassword) => bcrypt.compare(plainTextPassword, hashedPassword)
 
-export const creareJWT = (user) => {
+export const createJWT = (user) => {
     const iat = Math.floor(Date.now() / 1000)
     const exp = iat + 60 * 60 * 24 * 7
     

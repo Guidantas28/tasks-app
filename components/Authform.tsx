@@ -39,7 +39,7 @@ const AuthForm =({mode}) => {
             await signin(formState)
         }
 
-        setFormState(intial)
+        setFormState(initial)
         router.replace('/home')
 
     }
