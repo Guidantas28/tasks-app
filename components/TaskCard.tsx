@@ -6,7 +6,7 @@ import Button from "./Button";
 import Card from "./Card";
 
 const getData = async () => {
-    const user = await getUserFromCookie(cookies)
+    const user = await getUserFromCookie(cookies())
     const tasks = await db.task.findMany({
         where: {
             ownerId: user?.id,
@@ -24,7 +24,7 @@ const getData = async () => {
     return tasks;
 }
 
-const TasksCard= async ({ title, tasks }) => {
+const TaskCard= async ({ title, tasks }) => {
     const data = tasks || (await getData())
 
     return (
@@ -63,4 +63,4 @@ const TasksCard= async ({ title, tasks }) => {
     )
 }
 
-export default TasksCard;
+export default TaskCard;
